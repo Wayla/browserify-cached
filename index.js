@@ -27,7 +27,10 @@ module.exports = function (index, fn) {
         });
       });
     } else {
-      b.bundle({ debug: true }).pipe(tr);
+      b.bundle({
+        debug: true,
+        insertGlobals: true
+      }).pipe(tr);
     }
 
     return tr;
