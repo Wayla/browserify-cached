@@ -1,0 +1,32 @@
+{
+  "name": "browserify-cached",
+  "description": "A production cache for browserify.",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Wayla/browserify-cached.git"
+  },
+  "homepage": "https://github.com/Wayla/browserify-cached",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "dependencies": {
+    "waiting-cache": "~0.1.1",
+    "through": "~2.3.4",
+    "browserify": "~2.25.1"
+  },
+  "devDependencies": {
+    "tape": "~1.0.4",
+    "brfs": "0.0.6"
+  },
+  "keywords": [
+    ""
+  ],
+  "author": {
+    "name": "Julian Gruber",
+    "email": "julian@wayla.com",
+    "url": "http://wayla.com"
+  },
+  "license": "MIT"
+}
