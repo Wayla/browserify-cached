@@ -12,8 +12,7 @@ test('cached', function (t) {
     var start2 = Date.now();
     bundle(true).on('end', function () {
       var dur2 = Date.now() - start2;
-      console.log(dur2, dur)
-      t.ok(dur2 < (dur / 10));
+      t.ok(dur2 < (dur / 2));
     });
   })
 });
