@@ -4,6 +4,8 @@
 A production cache for
 [browserify](https://github.com/substack/node-browserify).
 
+[![build status](https://secure.travis-ci.org/Wayla/browserify-cached.png)](http://travis-ci.org/Wayla/browserify-cached)
+
 ## Usage
 
 ```js
