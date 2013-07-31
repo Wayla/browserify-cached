@@ -1,4 +1,3 @@
-
 # browserify-cached
 
 A production cache for
@@ -13,29 +12,20 @@ var browserify = require('browserify-cached');
 var http = require('http');
 var brfs = require('brfs');
 
-// just get an untouched bundle
-var bundle = browserify(__dirname + '/client.js');
-
-// or modify it with custom transforms and other cool things
 var bundle = browserify(__dirname + '/client.js', function (b) {
+  // you can modify the bundle with custom transforms and other cool things
+  // if you want to
   b.transform(brfs);
 });
 
 http.createServer(function (req, res) {
-  if (req.url == '/slow.js') return bundle(false).pipe(res);
-  if (req.url == '/fast.js') return bundle(true).pipe(res);
-
-  // usually you'd to something like this:
   if (req.url == '/bundle.js') {
     bundle(process.env.NODE_ENV == 'production').pipe(res);
-    return;
+  } else {
+    res.end('oops');
   }
-
-  res.end('oops');
 }).listen(9000, function () {
-  console.log('open http://localhost:9000/slow.js');
-  console.log('     http://localhost:9000/fast.js');
-  console.log('     http://localhost:9000/bundle.js');
+  console.log('open http://localhost:9000/bundle.js');
 });
 ```
 
