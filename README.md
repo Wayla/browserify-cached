@@ -31,10 +31,14 @@ http.createServer(function (req, res) {
 
 ## API
 
-### var bundle = browserifyCached(entry[, fn])
+### var bundle = browserifyCached(entry[, opts][, fn])
 
 Create a new `browserify-cached` instance with `entry` being the path to the
 browser JavaScript entry point.
+
+Possible options are:
+
+* `compress (Boolean)`: If `true`, compress cached bundles with `uglify-js`. Defaults to `true`.
 
 If you specify `fn` you can use that to modify the bundle before it will be
 built.
